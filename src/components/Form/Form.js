@@ -20,7 +20,8 @@ const Form = (props) => {
             onClick={() => {
               props.allSelected();
             }}
-            className={props.zeroTodo === 0 ? "hide" : "inputbtn"}
+            // className={props.zeroTodo === 0 ? "hide" : "inputbtn"}
+            className="inputbtn"
           >
             <img src="./select.png"></img>
           </button>

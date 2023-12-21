@@ -3,8 +3,8 @@ import "./Total.css";
 const Total = (props) => {
   return (
     <div className="total">
-      <span>{props.allTodos} item left</span>
-      <span>Complete Todos: {props.completeTodos}</span>
+      <span>{props.activedTodos} item left</span>
+      <span>Complete Todos: {props.completedTodos}</span>
     </div>
   );
 };
