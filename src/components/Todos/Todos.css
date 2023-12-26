@@ -25,10 +25,11 @@
   
   .done {
     text-decoration: line-through;
-    box-shadow: 1px 5px 1px 0 #c2ffbc;
+    box-shadow: 1px 5px 1px 0 #a3ee65;
+  }
+
+  .edit {
+    box-shadow: 1px 5px 1px 0 #4681ee;
   }
   
-  .delete {
-    width: 2vh;
-    height: 2vh;
-  }
+  

@@ -1,0 +1,15 @@
+.todo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.delete {
+    width: 3vh;
+    height: 3vh;
+  }
+
+.accept {
+    margin-right: 2vh;
+    width: 3vh;
+    height: 3vh;
+}

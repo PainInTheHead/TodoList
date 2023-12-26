@@ -1,28 +1,19 @@
-import './Todos.css'
+import "./Todos.css";
+import Todo from "./Todo/Todo";
 
 const Todos = (props) => {
-    return ( <ul className="todos">
-    {props.filteredTodos.map((todo) => {
-      return (
-        <li
-          onClick={() => props.toggleTodo(todo.id)}
-          className={todo.done ? "todo done" : "todo"}
-          key={todo.id}
-        >
-          {todo.text}
-          <img
-            src="./deletebut.png"
-            alt="delete"
-            className="delete"
-            onClick={(e) => {
-              e.stopPropagation();
-              props.deleteTodo(todo.id);
-            }}
-          ></img>
-        </li>
-      );
-    })}
-  </ul> );
-}
- 
+  return (
+    <ul className="todos">
+      {props.filteredTodos.map((todo) => {
+        return (
+          <Todo todo={todo} 
+          onToggle={props.toggleTodo}
+          onDelete={props.deleteTodo}
+          />
+        );
+      })}
+    </ul>
+  );
+};
+
 export default Todos;

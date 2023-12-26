@@ -3,24 +3,32 @@ import "./Form.css";
 
 const Form = (props) => {
   const [value, setValue] = useState("");
+
+  const handleTextChange = (ev) => {
+    setValue(ev.target.value)
+  }
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+
+    if (!value.trim()) {
+      return;
+    }
+
+    props.onSubmit(value);
+    setValue("");
+  }
+
   return (
     <>
-    <h1 className="title">Todos</h1>
       <form
         className="form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          props.putTodo(value);
-          setValue("");
-        }}
+        onSubmit={handleSubmit}
       >
         <div className="input">
           <button
             type="button"
-            onClick={() => {
-              props.allSelected();
-            }}
-            // className={props.zeroTodo === 0 ? "hide" : "inputbtn"}
+            onClick={props.allSelected}
             className="inputbtn"
           >
             <img src="./select.png"></img>
@@ -29,7 +37,7 @@ const Form = (props) => {
             type="text"
             placeholder="add yours txt..."
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={handleTextChange}
           />
           <button type="submit" className="inputbtn">
             <img src="./add.png"></img>
